@@ -10,9 +10,11 @@ import os
 # prerequisite: dominate
 # pip install dominate OR pip install --no-cache-dir -r requirements.txt
 # -----------------------
-# inputs:
+# Inputs:
 # 1: input directory (folder containing images)
 # 2: document title (header displayed on top)
+# Output:
+# index.html will be created next to the images - Keep file in there as paths in index.html are relative
 
 scriptDirectory = os.path.dirname(os.path.realpath(__file__))
 inputDirectory = os.path.join(scriptDirectory, "../")
