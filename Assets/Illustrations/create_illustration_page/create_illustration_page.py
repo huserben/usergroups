@@ -5,11 +5,13 @@ import sys
 import os
 
 # Script that creates an html file that displays all images of a specified folder.
+
 # Styles could be supplied via styles.css file.
 # -----------------------
 # prerequisite: dominate
 # pip install dominate OR pip install --no-cache-dir -r requirements.txt
 # -----------------------
+
 # Inputs:
 # 1: input directory (folder containing images)
 # 2: document title (header displayed on top)

@@ -5,7 +5,7 @@ on:
       - main
       - features/illustration_page_overview
     paths:
-      - Assets/Illustrations/*
+      - Assets/Illustrations/**
 
 jobs:
   Explore-GitHub-Actions:
