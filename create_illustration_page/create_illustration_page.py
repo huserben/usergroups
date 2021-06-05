@@ -22,23 +22,30 @@ scriptDirectory = os.path.dirname(os.path.realpath(__file__))
 inputDirectory = os.path.join(scriptDirectory, "../")
 documentTitle = "The Liberators Illustrations"
 
-if len(sys.argv) == 4:
+if len(sys.argv) == 3:
     print('Using custom input directory and document title')
     inputDirectory = sys.argv[1]
-    documentTitle = sys.argv[3]
+    documentTitle = sys.argv[2]
 
 outputFile = os.path.join(inputDirectory, "index.html")
 print('Input Directory: ', inputDirectory)
 print('Output File: ', outputFile)
 print('Document Title: ', documentTitle)
 
-images = glob.glob(inputDirectory + '/*.png')
+# Possible Image File Types
+types = ('*.png', '*.jpeg', '*.jpg')
+
+# url for links
+illustration_url = "https://github.com/theliberators/usergroups/tree/main/Assets/Illustrations"
 
 with document(title=documentTitle) as doc:
-    h1(a(documentTitle, href="https://github.com/theliberators/usergroups/tree/main/Assets/Illustrations"))
+    h1(a(documentTitle, href=illustration_url))
 
-    for path in images:
-        span(img(src=os.path.basename(path), style="width:30%"), _class='photo')
+    for image_type in types:
+        for path in glob.glob(inputDirectory + '/' + image_type):
+            image_filename = os.path.basename(path)
+            image_url = os.path.join(illustration_url, image_filename)
+            span(a(img(src=image_filename, style="width:30%"), href=image_url, target="_blank"), _class='photo')
 
 with doc.head:
     link(rel='stylesheet', href='style.css')
