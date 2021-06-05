@@ -4,6 +4,8 @@ on:
     branches:
       - main
       - features/illustration_page_overview
+    paths:
+      - Assets/Illustrations/*
 
 jobs:
   Explore-GitHub-Actions:
