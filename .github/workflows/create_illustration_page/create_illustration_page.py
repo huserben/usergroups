@@ -13,7 +13,7 @@ import sys
 # 1: input directory (folder containing images)
 # 2: document title (header displayed on top)
 
-inputDirectory = "../../Assets/Illustrations"
+inputDirectory = "../../../Assets/Illustrations"
 documentTitle = "The Liberators Illustrations"
 
 if len(sys.argv) == 3:
